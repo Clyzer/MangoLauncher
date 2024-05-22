@@ -256,6 +256,10 @@ function createWindow() {
 
     win.resizable = true
 
+    try {
+        require('electron-reloader')(module)
+    } catch (_) {}
+
     win.on('closed', () => {
         win = null
     })
